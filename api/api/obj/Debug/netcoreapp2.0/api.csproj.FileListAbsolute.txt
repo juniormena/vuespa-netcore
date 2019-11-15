@@ -1,0 +1,17 @@
+C:\Users\JUNIO\Desktop\vuespa-netcore\api\api\obj\Debug\netcoreapp2.0\api.csprojResolveAssemblyReference.cache
+C:\Users\JUNIO\Desktop\vuespa-netcore\api\api\obj\Debug\netcoreapp2.0\api.csproj.CoreCompileInputs.cache
+C:\Users\JUNIO\Desktop\vuespa-netcore\api\api\obj\Debug\netcoreapp2.0\api.AssemblyInfoInputs.cache
+C:\Users\JUNIO\Desktop\vuespa-netcore\api\api\obj\Debug\netcoreapp2.0\api.AssemblyInfo.cs
+C:\Users\JUNIO\Desktop\vuespa-netcore\api\api\bin\Debug\netcoreapp2.0\api.deps.json
+C:\Users\JUNIO\Desktop\vuespa-netcore\api\api\bin\Debug\netcoreapp2.0\api.runtimeconfig.json
+C:\Users\JUNIO\Desktop\vuespa-netcore\api\api\bin\Debug\netcoreapp2.0\api.runtimeconfig.dev.json
+C:\Users\JUNIO\Desktop\vuespa-netcore\api\api\bin\Debug\netcoreapp2.0\api.dll
+C:\Users\JUNIO\Desktop\vuespa-netcore\api\api\bin\Debug\netcoreapp2.0\api.pdb
+C:\Users\JUNIO\Desktop\vuespa-netcore\api\api\bin\Debug\netcoreapp2.0\Model.dll
+C:\Users\JUNIO\Desktop\vuespa-netcore\api\api\bin\Debug\netcoreapp2.0\Persistence.dll
+C:\Users\JUNIO\Desktop\vuespa-netcore\api\api\bin\Debug\netcoreapp2.0\Service.dll
+C:\Users\JUNIO\Desktop\vuespa-netcore\api\api\bin\Debug\netcoreapp2.0\Persistence.pdb
+C:\Users\JUNIO\Desktop\vuespa-netcore\api\api\bin\Debug\netcoreapp2.0\Service.pdb
+C:\Users\JUNIO\Desktop\vuespa-netcore\api\api\bin\Debug\netcoreapp2.0\Model.pdb
+C:\Users\JUNIO\Desktop\vuespa-netcore\api\api\obj\Debug\netcoreapp2.0\api.dll
+C:\Users\JUNIO\Desktop\vuespa-netcore\api\api\obj\Debug\netcoreapp2.0\api.pdb

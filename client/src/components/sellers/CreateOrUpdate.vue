@@ -1,0 +1,132 @@
+<template>
+<div>
+<center>
+<h2>{{pageTitle}}</h2>
+</center>
+  <el-form v-loading="loading" :model="form" :rules="rules" ref="ruleForm" >
+  <el-form-item label="Nombre" prop="name">
+  <el-input v-model="form.name" ></el-input>
+  </el-form-item>
+
+  <el-form-item label="Apellido" prop="lastName">
+  <el-input v-model="form.lastName" ></el-input>
+  </el-form-item>
+
+<el-form-item label="Cedula" prop="idNumber">
+  <el-input v-model="form.idNumber" ></el-input>
+  </el-form-item>
+
+<el-form-item label="Correo Electronico" prop="email">
+  <el-input  v-model="form.email" ></el-input>
+  </el-form-item>
+  <el-form-item>
+  <el-button @click="save" type="primary">Guardar Cliente</el-button>
+</el-form-item>
+</el-form>
+  
+  
+  </el-form>
+</div>
+</template>
+
+<script>
+export default {
+  name: "SellerCreateOrUpdate",
+  data() {
+    return {
+      loading: false,
+      form: {
+        sellerId:0,
+        name: null,
+        lastName: null,
+        idNumber: null,
+        email: null
+      },
+      rules:{
+        name:[
+        {required:true, message:'Debe ingresar un nombre'},
+        {min:3,message:'Su nombre debe contener al menos 3 caracteres'}
+        ],
+        lastName:[
+        {required:true, message:'Debe ingresar su apellido'}
+        ],
+        idNumber:[
+        {required:true, message:'Su cedula es requerida'}
+        ],
+        email:[
+        {required:true, message:'Su correo es requerido'}
+        ],
+      }
+    };
+  },
+  computed:{
+    pageTitle(){
+     return this.form.sellerId === 0 ? "Nuevo Cliente":this.form.name;
+    }
+  },
+  created() {
+    let self = this;
+    self.get(self.$route.params.id);
+  },
+  methods: {
+    get(id){
+      if(id==undefined)return;
+
+      let self=this;
+      self.loading=true;
+      self.$store.state.services.sellerService
+          .get(id)
+          .then(r=>{
+            self.loading=false;
+            self.form.sellerId=r.data.sellerId;
+            self.form.name=r.data.name;
+            self.form.lastName=r.data.lastName;
+            self.form.idNumber=r.data.idNumber;
+            self.form.email=r.data.email;
+          })
+          .catch(r=>{
+            self.$message({
+              message:"Ocurrio un error inesperado",
+              type:"error"
+            });
+          });
+    },
+    save(){
+      let self =this;
+      self.$refs["ruleForm" ].validate((valid)=>{
+        if(valid){
+          self.loading=true;
+
+          if(self.form.sellerId>0){
+            self.$store.state.services.sellerService
+          .update(self.form)
+          .then(r=>{
+            self.loading=false;
+            self.$router.push('/sellers');
+          })
+          .catch(r=>{
+            self.$message({
+              message:"Ocurrio un error inesperado",
+              type:"error"
+            });
+          });
+          }else{
+          self.$store.state.services.sellerService
+          .add(self.form)
+          .then(r=>{
+            self.loading=false;
+            self.$router.push('/sellers');
+          })
+          .catch(r=>{
+            self.$message({
+              message:"Ocurrio un error inesperado",
+              type:"error"
+            });
+          });
+          }
+        }
+      });
+    }
+  }
+};
+</script>
